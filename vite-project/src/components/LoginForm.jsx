@@ -1,44 +1,39 @@
-
 import React from 'react';
 import '../LoginPage.css'; 
 
-const LoginForm = () => {
+const LoginForm = ({ onToggleForm }) => {
     return (
         <div className="login-container">
-            <h2>
-                <b>SIGN IN</b>
-            </h2>
+            <h2><b>SIGN IN</b></h2>
             <p>Enter your email and password to login</p>
-            <div className="login_form">
 
-                {/* Email Input */}
+            <div className="login_form">
                 <label htmlFor="email">Email</label>
                 <input 
-                    type="email" 
-                    id="email" 
-                    placeholder="📧 Enter Your Email" 
-                    required 
+                    type="email"
+                    id="email"
+                    placeholder="📧 Enter Your Email"
+                    required
                 />
 
-                {/* Password Input */}
                 <label htmlFor="password">Password</label>
                 <input 
-                    type="password" 
-                    id="password" 
-                    placeholder="🔒 Enter Your Password" 
-                    required 
+                    type="password"
+                    id="password"
+                    placeholder="🔒 Enter Your Password"
+                    required
                 />
 
-                {/* Sign In Button */}
                 <div className="login-btn">
                     <button type="button">SIGN IN</button>
                 </div>
-                
+
                 <div className="login-or">
+                    <p><b>OR</b></p>
                     <p>
-                        <b>OR</b>
+                        Do not have an account?  
+                        <a href="#" onClick={onToggleForm}> SIGN UP</a>
                     </p>
-                    <p>Do not have an account? <a href="/signup">SIGN UP</a></p>
                 </div>
             </div>
         </div>
